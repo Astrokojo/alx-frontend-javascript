@@ -1,0 +1,13 @@
+/* eslint-disable jest/prefer-expect-assertions */
+/* eslint-disable jest/require-top-level-describe */
+import SkyHighBuilding from './6-sky_high';
+
+test('skyHighBuilding is implemented correctly', () => {
+  const building = new SkyHighBuilding(200, 65);
+
+  expect(building.sqft).toBe(200);
+  expect(building.floors).toBe(65);
+
+  expect(typeof building.evacuationWarningMessage).toBe('function');
+  expect(building.evacuationWarningMessage()).toBe('Evacuate slowly the 65 floors');
+});
