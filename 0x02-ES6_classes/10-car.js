@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 export default class Car {
   constructor(brand, motor, color) {
     if (![brand, motor, color].every((param) => typeof param === 'string')) {
