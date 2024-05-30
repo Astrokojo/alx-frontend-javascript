@@ -2,9 +2,9 @@ import Building from './5-building';
 
 export default class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
-    if (typeof sqft !== 'number' || typeof floors !== 'number') {
-      throw new TypeError('sqft and floors must be numbers');
-    }
+    // if (typeof sqft !== 'number' || typeof floors !== 'number') {
+    //   throw new TypeError('sqft and floors must be numbers');
+    // }
     super(sqft);
     this._floors = floors;
   }
@@ -15,6 +15,20 @@ export default class SkyHighBuilding extends Building {
 
   get floors() {
     return this._floors;
+  }
+
+  set sqft(feet) {
+    if (typeof feet !== 'number') {
+      throw new TypeError('Provide Valid Dimensions');
+    }
+    this._sqft = feet;
+  }
+
+  set floors(newFloors) {
+    if (typeof newFloors !== 'number') {
+      throw new TypeError('Provide valid number of floors');
+    }
+    this._floors = newFloors;
   }
 
   evacuationWarningMessage() {
